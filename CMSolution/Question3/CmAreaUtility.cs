@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace CMSolution.Question3
+﻿namespace CMSolution.Question3
 {
     public class CmAreaUtility
     {

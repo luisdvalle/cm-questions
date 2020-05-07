@@ -8,6 +8,11 @@ namespace CMSolution.Question2
         {
             var divisors = new List<int>();
 
+            if (input < 0)
+            {
+                return null;
+            }
+
             for (var i = 1; i <= input; i++)
             {
                 if (input % i == 0)

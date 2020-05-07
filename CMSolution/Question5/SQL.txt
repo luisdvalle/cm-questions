@@ -1,0 +1,22 @@
+﻿Question 5
+
+A. Return the names of all salespeople that have an order with George
+
+select distinct s.Name from Salesperson s 
+join Orders o on s.SalespersonID = o.SalespersonID 
+join Customer c on o.CustomerID = c.CustomerID
+where c.Name = 'George';
+
+B. Return the names of all salespeople that do not have any order with George
+
+select s.Name from Salesperson s where not exists (
+	select s.Name from Orders o 
+	where o.SalespersonID = s.SalespersonID
+	and o.CustomerID = 4);
+
+C. Return the names of salespeople that have 2 or more orders.
+
+select s.Name from Orders o
+join dbo.Salesperson s on o.SalespersonID = s.SalespersonID
+group by s.Name, o.SalespersonID
+having count(o.OrderID) >= 2;
