@@ -20,6 +20,7 @@ namespace CMSolution.Question8
         {
             _httpClient = new HttpClient()
             {
+                BaseAddress = new Uri(url),
                 MaxResponseContentBufferSize = 1000000
             };
             _linkParser = new LinkParser();
@@ -80,23 +81,16 @@ namespace CMSolution.Question8
 
             try
             {
-                var uri = new Uri(url);
                 var response = await _httpClient.GetAsync(url);
                 Console.WriteLine($"URL Processed | ElapsedTime: {sw.ElapsedMilliseconds} ms | " +
                                   $"Result: {response.StatusCode} | Url: {url}");
                 return (url, response.StatusCode);
             }
-            catch (UriFormatException)
+            catch (Exception e)
             {
                 Console.WriteLine($"URL Processed | ElapsedTime: {sw.ElapsedMilliseconds} ms | " +
-                                  $"Result: {HttpStatusCode.UnprocessableEntity} | Url: {url}");
+                                  $"Result: {HttpStatusCode.UnprocessableEntity} - {e.Message} | Url: {url}");
                 return (url, HttpStatusCode.UnprocessableEntity);
-            }
-            catch (HttpRequestException)
-            {
-                Console.WriteLine($"URL Processed | ElapsedTime: {sw.ElapsedMilliseconds} ms | " +
-                                  $"Result: {HttpStatusCode.GatewayTimeout} | Url: {url}");
-                return (url, HttpStatusCode.GatewayTimeout);
             }
         }
 
