@@ -56,7 +56,3 @@ URL Processed | ElapsedTime: 383 ms | Result: OK | Url: https://azure.microsoft.
 ## Authors
 
 * **Luis Del Valle** 
-
-## License
-
-This project is licensed under the MIT License
