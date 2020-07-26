@@ -1,11 +1,5 @@
 # cm-questions
 
-Hi CampaignMonitor team. This project has been created to provide answers for questions 1, 2, 3, 4, 5 and 8 of the Coding Take-Home test and as part of my application for a Full Stack Software Engineer role in CM. In the sections below you will find any comments and assumptions for some of the questions. Thank you for the chance to solve this test.
-Luis Del Valle
-0452523942
-luis@luis-delvalle.com
-
-
 ### Prerequisites
 
 To run this project on your local machine, you will need:
